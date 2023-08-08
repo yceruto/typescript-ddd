@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "baseUrl": ".",
+    "rootDirs": ["src", "lib"],
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@lib/*": ["lib/*"]
+    },
+    "plugins": [
+      { "transform": "typia/lib/transform" }
+    ]
+  },
+  "include": ["src/**/*.ts", "lib/**/*.ts", "test/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
