@@ -2,7 +2,7 @@ import { Command } from '@lib/shared/domain/bus/command/command';
 import { CommandHandler } from '@lib/shared/domain/bus/command/command-handler';
 import { CommandHandlerRegistry } from '@lib/shared/domain/bus/command/command-handler-registry';
 
-describe('CommandHandlerManager', () => {
+describe('CommandHandlerRegistry', () => {
   let manager: CommandHandlerRegistry;
   class TestCommand1 implements Command {}
   const handler1: CommandHandler<TestCommand1> = {

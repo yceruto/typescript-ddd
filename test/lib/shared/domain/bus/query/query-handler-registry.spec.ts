@@ -2,7 +2,7 @@ import { Query } from '@lib/shared/domain/bus/query/query';
 import { QueryHandler } from '@lib/shared/domain/bus/query/query-handler';
 import { QueryHandlerRegistry } from '@lib/shared/domain/bus/query/query-handler-registry';
 
-describe('QueryHandlerManager', () => {
+describe('QueryHandlerRegistry', () => {
   let manager: QueryHandlerRegistry;
   class TestQuery1 implements Query {}
   const handler1: QueryHandler<TestQuery1> = {
