@@ -18,6 +18,7 @@ POST /bookings
         "amount": 1000,
         "currency": "EUR"
       },
+      "frequency": "Daily",
       "quantity": 1
     },
     {
@@ -28,6 +29,7 @@ POST /bookings
         "amount": 1500,
         "currency": "EUR"
       },
+      "frequency": "Monthly",
       "quantity": 2
     }
   ],
@@ -49,6 +51,7 @@ Response
         "amount": 1000,
         "currency": "EUR"
       },
+      "frequency": "Daily",
       "quantity": 1,
       "subtotal": 1000
     },
@@ -60,6 +63,7 @@ Response
         "amount": 1500,
         "currency": "EUR"
       },
+      "frequency": "Monthly",
       "quantity": 2,
       "subtotal": 3000
     }
