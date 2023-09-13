@@ -1,5 +1,5 @@
 import { Service } from '../../../../../../../src/service/domain/model/service';
-import { ServiceAvailability } from '../../../../../../../src/service/domain/model/service-availability';
+import { ServiceFrequency } from '../../../../../../../src/service/domain/model/service-frequency';
 import { ServiceId } from '../../../../../../../src/service/domain/model/service-id';
 import { ServicePrice } from '../../../../../../../src/service/domain/model/service-price';
 import { ServiceTitle } from '../../../../../../../src/service/domain/model/service-title';
@@ -10,7 +10,7 @@ describe('InMemoryServiceRepository', () => {
     id: ServiceId.create(),
     name: ServiceTitle.create('Service 1'),
     price: ServicePrice.create(100, 'EUR'),
-    availability: ServiceAvailability.create(10),
+    frequency: ServiceFrequency.Daily,
   });
   let repository: InMemoryServiceRepository;
 
@@ -23,7 +23,7 @@ describe('InMemoryServiceRepository', () => {
       id: ServiceId.create(),
       name: ServiceTitle.create('Service 2'),
       price: ServicePrice.create(300, 'EUR'),
-      availability: ServiceAvailability.create(40),
+      frequency: ServiceFrequency.Monthly,
     }));
 
     expect(await repository.all()).toHaveLength(2);
@@ -34,7 +34,7 @@ describe('InMemoryServiceRepository', () => {
       id: service.getId(),
       name: ServiceTitle.create('Service 2'),
       price: ServicePrice.create(300, 'EUR'),
-      availability: ServiceAvailability.create(40),
+      frequency: ServiceFrequency.Monthly,
     });
 
     await expect(repository.add(existingService)).rejects.toThrowError('Service already exists');
@@ -51,7 +51,7 @@ describe('InMemoryServiceRepository', () => {
       id: ServiceId.create(),
       name: ServiceTitle.create('Service 2'),
       price: ServicePrice.create(300, 'EUR'),
-      availability: ServiceAvailability.create(40),
+      frequency: ServiceFrequency.Monthly,
     });
 
     await expect(repository.remove(nonExistingService)).rejects.toThrowError('Service not found');

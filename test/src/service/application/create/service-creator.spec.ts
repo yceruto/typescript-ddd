@@ -1,7 +1,7 @@
 import { DomainEventBus } from '@lib/shared/domain/bus/event/domain-event-bus';
 import { ServiceCreator } from '../../../../../src/service/application/create/service-creator';
 import { Service } from '../../../../../src/service/domain/model/service';
-import { ServiceAvailability } from '../../../../../src/service/domain/model/service-availability';
+import { ServiceFrequency } from '../../../../../src/service/domain/model/service-frequency';
 import { ServiceId } from '../../../../../src/service/domain/model/service-id';
 import { ServicePrice } from '../../../../../src/service/domain/model/service-price';
 import { ServiceTitle } from '../../../../../src/service/domain/model/service-title';
@@ -24,7 +24,7 @@ describe('ServiceCreator', () => {
       id: ServiceId.create(),
       name: ServiceTitle.create('Service 1'),
       price: ServicePrice.create(100, 'EUR'),
-      availability: ServiceAvailability.create(10),
+      frequency: ServiceFrequency.Daily,
     });
 
     expect(service).toBeInstanceOf(Service);

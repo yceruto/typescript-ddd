@@ -1,7 +1,7 @@
 import { ServiceCreatedEvent } from '../../../../../src/service/domain/event/service-created.event';
 import { ServiceUpdatedEvent } from '../../../../../src/service/domain/event/service-updated.event';
 import { Service } from '../../../../../src/service/domain/model/service';
-import { ServiceAvailability } from '../../../../../src/service/domain/model/service-availability';
+import { ServiceFrequency } from '../../../../../src/service/domain/model/service-frequency';
 import { ServiceId } from '../../../../../src/service/domain/model/service-id';
 import { ServicePrice } from '../../../../../src/service/domain/model/service-price';
 import { ServiceTitle } from '../../../../../src/service/domain/model/service-title';
@@ -11,7 +11,7 @@ describe('Service', () => {
     id: ServiceId.create(),
     name: ServiceTitle.create('Service 1'),
     price: ServicePrice.create(100, 'USD'),
-    availability: ServiceAvailability.create(10),
+    frequency: ServiceFrequency.Monthly,
   });
 
   it('should create a service and push ServiceCreatedEvent', () => {
@@ -20,7 +20,7 @@ describe('Service', () => {
     expect(service.getPrice()).toBeInstanceOf(ServicePrice);
     expect(service.getPrice().amount).toBe(100);
     expect(service.getPrice().currency).toBe('USD');
-    expect(service.getAvailability().quantity).toBe(10);
+    expect(service.getFrequency()).toBe(ServiceFrequency.Monthly);
     expect(service.getCreatedAt()).toBeInstanceOf(Date);
     expect(service.getUpdatedAt()).toBeUndefined();
 

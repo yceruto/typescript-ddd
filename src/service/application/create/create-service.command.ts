@@ -1,4 +1,5 @@
 import { Command } from '@lib/shared/domain/bus/command';
+import { ServiceFrequency } from 'src/service/domain/model/service-frequency';
 
 export class CreateServiceCommand implements Command {
   constructor(
@@ -6,6 +7,6 @@ export class CreateServiceCommand implements Command {
     public readonly name: string,
     public readonly priceAmount: number,
     public readonly priceCurrency: string,
-    public readonly availability: number,
+    public readonly frequency: ServiceFrequency,
   ) {}
 }

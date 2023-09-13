@@ -15,7 +15,7 @@ export class PostServiceAction extends CommandAction {
       payload.name,
       payload.price.amount,
       payload.price.currency,
-      payload.availability,
+      payload.frequency,
     ));
   }
 }

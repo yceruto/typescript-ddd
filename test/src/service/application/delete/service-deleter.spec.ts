@@ -3,7 +3,7 @@ import { ServiceDeleter } from '../../../../../src/service/application/delete/se
 import { ServiceFinder } from '../../../../../src/service/application/find/service-finder';
 import { ServiceNotFoundError } from '../../../../../src/service/domain/error/service-not-found-error';
 import { Service } from '../../../../../src/service/domain/model/service';
-import { ServiceAvailability } from '../../../../../src/service/domain/model/service-availability';
+import { ServiceFrequency } from '../../../../../src/service/domain/model/service-frequency';
 import { ServiceId } from '../../../../../src/service/domain/model/service-id';
 import { ServicePrice } from '../../../../../src/service/domain/model/service-price';
 import { ServiceTitle } from '../../../../../src/service/domain/model/service-title';
@@ -16,7 +16,7 @@ describe('ServiceDeleter', () => {
       id: serviceId,
       name: ServiceTitle.create('Service 1'),
       price: ServicePrice.create(100, 'EUR'),
-      availability: ServiceAvailability.create(10),
+      frequency: ServiceFrequency.Daily,
     });
     const repository = {
       add: jest.fn(),

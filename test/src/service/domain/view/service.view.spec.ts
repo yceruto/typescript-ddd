@@ -1,5 +1,5 @@
 import { Service } from '../../../../../src/service/domain/model/service';
-import { ServiceAvailability } from '../../../../../src/service/domain/model/service-availability';
+import { ServiceFrequency } from '../../../../../src/service/domain/model/service-frequency';
 import { ServiceId } from '../../../../../src/service/domain/model/service-id';
 import { ServicePrice } from '../../../../../src/service/domain/model/service-price';
 import { ServiceTitle } from '../../../../../src/service/domain/model/service-title';
@@ -10,14 +10,14 @@ describe('ServiceView', () => {
     id: ServiceId.create(),
     name: ServiceTitle.create('Service 1'),
     price: ServicePrice.create(100, 'USD'),
-    availability: ServiceAvailability.create(10),
+    frequency: ServiceFrequency.Daily,
   });
 
   const service2 = Service.create({
     id: ServiceId.create(),
     name: ServiceTitle.create('Service 2'),
     price: ServicePrice.create(50, 'EUR'),
-    availability: ServiceAvailability.create(15),
+    frequency: ServiceFrequency.Monthly,
   });
 
   it('should create a service view', () => {
@@ -28,7 +28,7 @@ describe('ServiceView', () => {
     expect(serviceView.name).toBe(service1.getTitle().value);
     expect(serviceView.price.amount).toBe(service1.getPrice().amount);
     expect(serviceView.price.currency).toBe(service1.getPrice().currency);
-    expect(serviceView.availability).toBe(service1.getAvailability().quantity);
+    expect(serviceView.frequency).toBe('Daily');
   })
 
   it('should create many service views', () => {

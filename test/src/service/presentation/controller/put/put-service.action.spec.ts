@@ -18,7 +18,7 @@ describe('PUT /services/:id', () => {
           amount: 1500,
           currency: 'EUR',
         },
-        availability: 15,
+        frequency: 'Daily',
       });
   })
 
@@ -42,7 +42,7 @@ describe('PUT /services/:id', () => {
         amount: 1000,
         currency: 'USD',
       },
-      availability: 15,
+      frequency: 'Daily',
       createdAt: expect.stringMatching(dateTimeISO),
       updatedAt: expect.stringMatching(dateTimeISO),
     })

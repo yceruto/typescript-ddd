@@ -21,7 +21,7 @@ export class ServiceView {
    */
   public readonly updatedAt?: string;
 
-  public readonly availability: number;
+  public readonly frequency: string;
 
   public static createMany(services: Service[]): ServiceView[] {
     return services.map((service) => ServiceView.create(service));
@@ -35,7 +35,7 @@ export class ServiceView {
     this.id = service.getId().value;
     this.name = service.getTitle().value;
     this.price = PriceView.create(service.getPrice());
-    this.availability = service.getAvailability().quantity;
+    this.frequency = service.getFrequency().toString();
     this.createdAt = service.getCreatedAt().toISOString();
     this.updatedAt = service.getUpdatedAt()?.toISOString();
   }

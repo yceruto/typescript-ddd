@@ -18,7 +18,7 @@ describe('POST /services', () => {
           amount: 1500,
           currency: 'EUR',
         },
-        availability: 15,
+        frequency: 'Daily',
       });
 
     expect(res.status).toBe(201);
@@ -29,7 +29,7 @@ describe('POST /services', () => {
         amount: 1500,
         currency: 'EUR',
       },
-      availability: 15,
+      frequency: 'Daily',
       createdAt: expect.stringMatching(dateTimeISO),
     })
   })

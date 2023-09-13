@@ -18,7 +18,7 @@ describe('GET /services', () => {
           amount: 1500,
           currency: 'EUR',
         },
-        availability: 15,
+        frequency: 'Daily',
       });
   })  
 
@@ -36,7 +36,7 @@ describe('GET /services', () => {
         amount: 1500,
         currency: 'EUR',
       },
-      availability: 15,
+      frequency: 'Daily',
       createdAt: expect.stringMatching(dateTimeISO),
     })
   })

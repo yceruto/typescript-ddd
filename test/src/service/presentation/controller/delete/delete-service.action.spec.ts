@@ -17,7 +17,7 @@ describe('DELETE /services/:id', () => {
           amount: 1500,
           currency: 'EUR',
         },
-        availability: 15,
+        frequency: 'Daily',
       });
   })  
 

@@ -1,4 +1,5 @@
 import { PriceView } from '@lib/shared/domain/view';
+import { ServiceFrequency } from 'src/service/domain/model/service-frequency';
 
 export interface PostServiceRequest {
   /**
@@ -13,5 +14,5 @@ export interface PostServiceRequest {
 
   price: PriceView;
 
-  availability: number;
+  frequency: ServiceFrequency;
 }
